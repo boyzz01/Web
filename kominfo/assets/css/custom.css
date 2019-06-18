@@ -1,0 +1,30 @@
+.form-login .form-control {
+    border:none;
+    border-bottom: 1px solid #333
+}
+
+.form-control {
+    border:none;
+    border-bottom: 1px solid #333
+}
+
+.detail .form-control {
+    border:none;
+    border-bottom: 1px solid #fff;
+    
+}
+
+
+.btn {
+    height: 40px;
+}
+
+.btn-rounded {
+    border-radius: 25px;
+    /* border-radius: 50%; */
+    text-align: center;
+}
+
+.dataTables_length #filter, .dataTables_length #filter select {
+    margin-left:20px;
+}
