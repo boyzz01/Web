@@ -25,15 +25,26 @@ class Tanggapan extends REST_Controller {
 
     public function tambah_post($id_pengaduan){
           $devicetoken  = array($this->db->query("SELECT users.device_token FROM pengaduan JOIN users ON pengaduan.user_id = users.id  where pengaduan.id_pengaduan = $id_pengaduan")->row()->device_token);
+          
+            $pengirim =$this->post('user');
+           $devicetoken2  = array($this->db->query("SELECT users.device_token FROM pengaduan JOIN users ON pengaduan.user_id = $pengirim  where pengaduan.id_pengaduan = $id_pengaduan")->row()->device_token);
                
-                $pesan =[
+               
+             if($devicetoken != $devicetoken2)
+             {
+                   $pesan =[
                     "title" =>"Komentar Baru",
-                    "message" => "Ada Komentar Baru Di Laporan Anda"
+                    "message" => "Ada Komentar Baru Di Laporan Anda",
+                    "data" => $id_pengaduan
                   ]; 
                     $this->send($devicetoken, $pesan);
+             }
+        
+               
+              
         $data = [
             "pengaduan_id" => $id_pengaduan,
-            "tanggapan" => "aaa",
+            "tanggapan" => $this->post('tanggapan'),
             "tgl"=> $this->post('tgl'),
             "user"=>$this->post('user'),
         ];

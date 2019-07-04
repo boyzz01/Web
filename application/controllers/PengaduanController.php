@@ -45,7 +45,8 @@ class PengaduanController extends CI_Controller{
                 {
                   $pesan =[
                     "title" =>"Laporan Anda Berubah",
-                    "message" => "Laporan Anda Diubah Menjadi Publik"
+                    "message" => "Laporan Anda Diubah Menjadi Publik",
+                    "data" => $id
                     
                   ]; 
                    $this->send($devicetoken, $pesan);
@@ -54,7 +55,8 @@ class PengaduanController extends CI_Controller{
                 {
                   $pesan =[
                     "title" =>"Laporan Anda Berubah",
-                    "message" => "Laporan Anda Diubah Menjadi Private"
+                    "message" => "Laporan Anda Diubah Menjadi Private",
+                      "data" => $id
                   ]; 
                    $this->send($devicetoken, $pesan);
                 }
@@ -67,7 +69,8 @@ class PengaduanController extends CI_Controller{
                 {
                   $pesan =[
                     "title" =>"Laporan Anda Berubah",
-                    "message" => "Laporan Anda Sedang Diproses"
+                    "message" => "Laporan Anda Sedang Diproses",
+                      "data" => $id
                   ]; 
                    $this->send($devicetoken, $pesan);
                 }
@@ -75,7 +78,8 @@ class PengaduanController extends CI_Controller{
                 {
                   $pesan =[
                     "title" =>"Laporan Anda Berubah",
-                    "message" => "Laporan Anda Belum Ditanggapi"
+                    "message" => "Laporan Anda Belum Ditanggapi",
+                      "data" => $id
                   ]; 
                    $this->send($devicetoken, $pesan);
                 }
@@ -84,7 +88,8 @@ class PengaduanController extends CI_Controller{
                 {
                   $pesan =[
                     "title" =>"Laporan Anda Berubah",
-                    "message" => "Laporan Anda Sudah Ditangani"
+                    "message" => "Laporan Anda Sudah Ditangani",
+                      "data" => $id
                   ]; 
                    $this->send($devicetoken, $pesan);
                 }

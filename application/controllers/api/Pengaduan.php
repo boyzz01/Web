@@ -29,6 +29,11 @@ class Pengaduan extends REST_Controller {
         $this->set_response($data, REST_Controller::HTTP_OK); 
     }
     
+    public function pengaduanid_get($id_pengaduan){
+        $data = $this->M_Pengaduan->getById($id_pengaduan);
+        $this->set_response($data, REST_Controller::HTTP_OK); 
+    }
+    
     
 
     public function tambah_post(){

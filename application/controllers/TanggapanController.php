@@ -36,7 +36,8 @@ class TanggapanController extends CI_Controller{
             if($this->M_Tanggapan->save($data)){
                  $pesan =[
                     "title" =>"Komentar Baru",
-                    "message" => "Ada Komentar Baru Di Laporan Anda"
+                    "message" => "Ada Komentar Baru Di Laporan Anda",
+                      "data" => $id
                   ]; 
                     $this->send($devicetoken, $pesan);
                 $this->session->set_flashdata('msg', '<div class="alert alert-success"><h4>BERHASIL</h4><p>Data berhasil disimpan!</p></div>');
